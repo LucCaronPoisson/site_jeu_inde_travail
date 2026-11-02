@@ -125,3 +125,29 @@ studioElements.forEach((element) => {
     element.classList.add("reveal");
     studioObserver.observe(element);
 });
+
+
+const animatedElements = document.querySelectorAll(
+    ".studio-heading, .studio-intro, .studio-description, " +
+    ".value-item, .games-heading, .game-card"
+);
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+        }
+
+    });
+
+}, {
+    threshold: 0.15
+});
+
+animatedElements.forEach((element) => {
+    element.classList.add("reveal");
+    observer.observe(element);
+});
