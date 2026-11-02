@@ -469,12 +469,140 @@
     color: #77746E;
 }
 
+/* ==============================
+   FOOTER
+============================== */
+
+.site-footer {
+    background-color: #252522;
+    color: #F5F2EC;
+    padding: 85px 8% 30px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Partie principale */
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.3fr 1fr;
+    gap: 55px;
+    padding-bottom: 75px;
+}
+
+/* Identité du studio */
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #F5F2EC;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+
+.footer-logo span {
+    color: #C18A6C;
+}
+
+.footer-brand p {
+    max-width: 270px;
+    color: #AAA69E;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* Colonnes */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 17px;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+    color: #C18A6C;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.footer-column a,
+.footer-column p {
+    color: #C5C1B9;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #FFFFFF;
+}
+
+.footer-column p {
+    margin: 0;
+}
+
+/* Séparation */
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(245, 242, 236, 0.18);
+}
+
+/* Bas de page */
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-top: 28px;
+}
+
+.footer-bottom p {
+    color: #89867F;
+    font-size: 11px;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-legal a,
+.back-to-top {
+    color: #AAA69E;
+    font-size: 11px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover,
+.back-to-top:hover {
+    color: #FFFFFF;
+}
+
 /* Responsive */
 
 @media (max-width: 768px) {
 
     .games-section {
         padding: 90px 7%;
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 45px;
     }
 
     .games-heading {
@@ -604,5 +732,23 @@
     .logo-name {
         font-size: 10px;
     }
+    .site-footer {
+        padding: 70px 7% 25px;
+    }
 
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 12px;
+    }
 }

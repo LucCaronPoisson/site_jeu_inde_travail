@@ -151,3 +151,12 @@ animatedElements.forEach((element) => {
     element.classList.add("reveal");
     observer.observe(element);
 });
+
+
+// Mise à jour automatique de l'année dans le footer
+
+const currentYear = document.getElementById("current-year");
+
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
