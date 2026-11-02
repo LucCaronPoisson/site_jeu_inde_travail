@@ -193,9 +193,150 @@
     transform: translateY(-3.5px) rotate(-45deg);
 }
 
-/* RESPONSIVE */
 
-@media (max-width: 850px) {
+
+/* ==============================
+   PRÉSENTATION DU STUDIO
+============================== */
+
+.studio-section {
+    padding: 130px 8%;
+    background-color: #F5F2EC;
+    color: #252522;
+}
+
+.studio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* En-tête */
+
+.studio-heading {
+    max-width: 850px;
+    margin-bottom: 85px;
+}
+
+.section-label {
+    display: inline-block;
+    margin-bottom: 25px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #A36B50;
+}
+
+.studio-heading h2 {
+    font-size: clamp(38px, 6vw, 76px);
+    line-height: 1.08;
+    font-weight: 400;
+    letter-spacing: -3px;
+}
+
+.studio-heading h2 span {
+    display: block;
+    color: #A36B50;
+    font-style: italic;
+}
+
+/* Présentation */
+
+.studio-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    padding-bottom: 100px;
+    border-bottom: 1px solid rgba(37, 37, 34, 0.18);
+}
+
+.studio-lead {
+    max-width: 450px;
+    font-size: 28px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.studio-description {
+    max-width: 480px;
+}
+
+.studio-description p {
+    margin-bottom: 22px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #66645F;
+}
+
+/* Valeurs */
+
+.studio-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding-top: 65px;
+}
+
+.value-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.value-number {
+    margin-bottom: 30px;
+    font-size: 12px;
+    color: #A36B50;
+}
+
+.value-item h3 {
+    margin-bottom: 15px;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.value-item p {
+    max-width: 260px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #77746E;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .studio-section {
+        padding: 90px 7%;
+    }
+
+    .studio-heading {
+        margin-bottom: 55px;
+    }
+
+    .studio-heading h2 {
+        letter-spacing: -1.5px;
+    }
+
+    .studio-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-bottom: 65px;
+    }
+
+    .studio-lead {
+        font-size: 24px;
+    }
+
+    .studio-values {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-top: 50px;
+    }
+
+    .value-number {
+        margin-bottom: 15px;
+    }
+
 
     .header-container {
         width: calc(100% - 40px);

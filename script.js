@@ -98,3 +98,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+// Apparition progressive des éléments de présentation
+
+const studioElements = document.querySelectorAll(
+    ".studio-heading, .studio-intro, .studio-description, .value-item"
+);
+
+const studioObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            studioObserver.unobserve(entry.target);
+        }
+
+    });
+
+}, {
+    threshold: 0.15
+});
+
+studioElements.forEach((element) => {
+    element.classList.add("reveal");
+    studioObserver.observe(element);
+});
