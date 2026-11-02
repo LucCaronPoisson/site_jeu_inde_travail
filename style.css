@@ -1,0 +1,275 @@
+
+/* =====================================
+   HEADER - ATELIER NORD
+===================================== */
+
+:root {
+    --header-bg: #f5f3ee;
+    --header-text: #20211e;
+    --header-muted: #777970;
+    --header-accent: #bd5b3e;
+    --header-border: #d8d6ce;
+}
+
+/* HEADER */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85px;
+    z-index: 1000;
+
+    background: rgba(245, 243, 238, 0.92);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(32, 33, 30, 0.08);
+
+    transition:
+        height 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
+    height: 72px;
+    background: rgba(245, 243, 238, 0.97);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
+}
+
+/* CONTAINER */
+
+.header-container {
+    width: min(1180px, calc(100% - 64px));
+    height: 100%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--header-text);
+    text-decoration: none;
+}
+
+.logo-symbol {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: -4px;
+    line-height: 1;
+}
+
+.logo-symbol span {
+    color: var(--header-accent);
+}
+
+.logo-name {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* NAVIGATION */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.nav-link {
+    position: relative;
+    padding: 8px 0;
+
+    color: var(--header-muted);
+    font-size: 12px;
+    font-weight: 500;
+
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--header-accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--header-text);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* CONTACT BUTTON */
+
+.nav-contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 12px 17px;
+
+    border: 1px solid var(--header-border);
+
+    color: var(--header-text);
+    font-size: 11px;
+    font-weight: 600;
+
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-contact span {
+    color: var(--header-accent);
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.nav-contact:hover {
+    background: var(--header-text);
+    color: white;
+    border-color: var(--header-text);
+}
+
+.nav-contact:hover span {
+    transform: translate(3px, -3px);
+}
+
+/* HAMBURGER */
+
+.menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+
+    padding: 10px;
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 1px;
+
+    margin: 6px auto;
+
+    background: var(--header-text);
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle.active span:first-child {
+    transform: translateY(3.5px) rotate(45deg);
+}
+
+.menu-toggle.active span:last-child {
+    transform: translateY(-3.5px) rotate(-45deg);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+    .header-container {
+        width: calc(100% - 40px);
+    }
+
+    .menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 1002;
+    }
+
+    .navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+        padding: 25px 30px 30px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        background: var(--header-bg);
+        border-bottom: 1px solid var(--header-border);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    .navigation.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        padding: 15px 0;
+        border-bottom: 1px solid var(--header-border);
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-contact {
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .site-header {
+        height: 72px;
+    }
+
+    .site-header.scrolled {
+        height: 65px;
+    }
+
+    .logo-symbol {
+        font-size: 32px;
+    }
+
+    .logo-name {
+        font-size: 10px;
+    }
+
+}
