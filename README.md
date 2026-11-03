@@ -28,6 +28,9 @@ Aucun framework ou bibliothèque externe n'est utilisé.
 - Navigation entre les différentes sections.
 - Animations et interactions.
 - Interface responsive (ordinateur, tablette et mobile).
+- Formulaire de contact
+- Recherche de jeu par style
+
 
 ## Structure du projet
 
