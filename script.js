@@ -207,6 +207,7 @@ if (gamesGrid) {
 
     const filter = document.createElement("select");
     filter.add(new Option("Tous les genres", ""));
+    filter.classList.add('filter-select')
 
     const genres = new Set(games.map(game => game.genre));
     for (const genre of genres) {
@@ -215,6 +216,7 @@ if (gamesGrid) {
 
     const label = document.createElement("label");
     label.append("Filtrer par genre ", filter);
+    label.classList.add('label-select')
     gamesGrid.before(label);
 
     filter.addEventListener("change", () => {

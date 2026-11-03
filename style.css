@@ -925,3 +925,21 @@
         gap: 12px;
     }
 }
+
+.filter-select {
+        appearance: none; 
+        background-color: #ffffff;
+        border: 1px solid #d1d5db;
+        border-radius: 6px;
+        padding: 8px 36px 8px 12px;
+        font-size: 15px;
+        color: #374151;
+        cursor: pointer;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        margin-bottom: 20px;
+        margin-left: 10px;
+    }
+.label-select{
+    font-size: 20px;
+
+}
