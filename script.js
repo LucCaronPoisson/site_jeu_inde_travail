@@ -160,6 +160,42 @@ const currentYear = document.getElementById("current-year");
 if (currentYear) {
     currentYear.textContent = new Date().getFullYear();
 }
+
+
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+if (contactForm && formMessage) {
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (!contactForm.reportValidity()) {
+            return;
+        }
+        const formData = new FormData(contactForm);
+        const name = formData.get("name");
+        const email = formData.get("email");
+        const subject = formData.get("subject");
+        const requestType = formData.get("request-type");
+        const message = formData.get("message");
+        const recipient = "contact@atelier-nord.fr";
+        const emailSubject = encodeURIComponent(subject);
+        const emailBody = encodeURIComponent(
+            `Nom : ${name}\n` +
+            `Email : ${email}\n` +
+            `Type de demande : ${requestType}\n\n` +
+            `Message :\n${message}`
+        );
+
+        const mailtoLink =
+            `mailto:${recipient}?subject=${emailSubject}&body=${emailBody}`;
+        formMessage.textContent =
+            "Votre logiciel de messagerie va s'ouvrir pour envoyer votre demande.";
+        formMessage.className = "form-message success";
+        window.location.href = mailtoLink;
+
+    });
+
+}
 // Filtre des jeux par genre
 const gamesGrid = document.querySelector("#jeux .games-grid");
 
