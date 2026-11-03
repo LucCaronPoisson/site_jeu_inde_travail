@@ -160,3 +160,30 @@ const currentYear = document.getElementById("current-year");
 if (currentYear) {
     currentYear.textContent = new Date().getFullYear();
 }
+// Filtre des jeux par genre
+const gamesGrid = document.querySelector("#jeux .games-grid");
+
+if (gamesGrid) {
+    const games = Array.from(gamesGrid.querySelectorAll(".game-card"), card => ({
+        card,
+        genre: card.querySelector(".game-meta span").textContent.trim()
+    }));
+
+    const filter = document.createElement("select");
+    filter.add(new Option("Tous les genres", ""));
+
+    const genres = new Set(games.map(game => game.genre));
+    for (const genre of genres) {
+        filter.add(new Option(genre, genre));
+    }
+
+    const label = document.createElement("label");
+    label.append("Filtrer par genre ", filter);
+    gamesGrid.before(label);
+
+    filter.addEventListener("change", () => {
+        for (const { card, genre } of games) {
+            card.hidden = filter.value !== "" && filter.value !== genre;
+        }
+    });
+}
