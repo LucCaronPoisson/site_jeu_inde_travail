@@ -1,0 +1,754 @@
+
+/* =====================================
+   HEADER - ATELIER NORD
+===================================== */
+
+:root {
+    --header-bg: #f5f3ee;
+    --header-text: #20211e;
+    --header-muted: #777970;
+    --header-accent: #bd5b3e;
+    --header-border: #d8d6ce;
+}
+
+/* HEADER */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85px;
+    z-index: 1000;
+
+    background: rgba(245, 243, 238, 0.92);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(32, 33, 30, 0.08);
+
+    transition:
+        height 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
+    height: 72px;
+    background: rgba(245, 243, 238, 0.97);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
+}
+
+/* CONTAINER */
+
+.header-container {
+    width: min(1180px, calc(100% - 64px));
+    height: 100%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--header-text);
+    text-decoration: none;
+}
+
+.logo-symbol {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: -4px;
+    line-height: 1;
+}
+
+.logo-symbol span {
+    color: var(--header-accent);
+}
+
+.logo-name {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* NAVIGATION */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.nav-link {
+    position: relative;
+    padding: 8px 0;
+
+    color: var(--header-muted);
+    font-size: 12px;
+    font-weight: 500;
+
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--header-accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--header-text);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* CONTACT BUTTON */
+
+.nav-contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 12px 17px;
+
+    border: 1px solid var(--header-border);
+
+    color: var(--header-text);
+    font-size: 11px;
+    font-weight: 600;
+
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-contact span {
+    color: var(--header-accent);
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.nav-contact:hover {
+    background: var(--header-text);
+    color: white;
+    border-color: var(--header-text);
+}
+
+.nav-contact:hover span {
+    transform: translate(3px, -3px);
+}
+
+/* HAMBURGER */
+
+.menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+
+    padding: 10px;
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 1px;
+
+    margin: 6px auto;
+
+    background: var(--header-text);
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle.active span:first-child {
+    transform: translateY(3.5px) rotate(45deg);
+}
+
+.menu-toggle.active span:last-child {
+    transform: translateY(-3.5px) rotate(-45deg);
+}
+
+
+
+/* ==============================
+   PRÉSENTATION DU STUDIO
+============================== */
+
+.studio-section {
+    padding: 130px 8%;
+    background-color: #F5F2EC;
+    color: #252522;
+}
+
+.studio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* En-tête */
+
+.studio-heading {
+    max-width: 850px;
+    margin-bottom: 85px;
+}
+
+.section-label {
+    display: inline-block;
+    margin-bottom: 25px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #A36B50;
+}
+
+.studio-heading h2 {
+    font-size: clamp(38px, 6vw, 76px);
+    line-height: 1.08;
+    font-weight: 400;
+    letter-spacing: -3px;
+}
+
+.studio-heading h2 span {
+    display: block;
+    color: #A36B50;
+    font-style: italic;
+}
+
+/* Présentation */
+
+.studio-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    padding-bottom: 100px;
+    border-bottom: 1px solid rgba(37, 37, 34, 0.18);
+}
+
+.studio-lead {
+    max-width: 450px;
+    font-size: 28px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.studio-description {
+    max-width: 480px;
+}
+
+.studio-description p {
+    margin-bottom: 22px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #66645F;
+}
+
+/* Valeurs */
+
+.studio-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding-top: 65px;
+}
+
+.value-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.value-number {
+    margin-bottom: 30px;
+    font-size: 12px;
+    color: #A36B50;
+}
+
+.value-item h3 {
+    margin-bottom: 15px;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.value-item p {
+    max-width: 260px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #77746E;
+}
+
+
+/* ==============================
+   SECTION NOS JEUX
+============================== */
+
+.games-section {
+    padding: 130px 8%;
+    background-color: #EAE6DE;
+    color: #252522;
+}
+
+.games-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* En-tête */
+
+.games-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 50px;
+    margin-bottom: 75px;
+}
+
+.games-heading h2 {
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.08;
+    font-weight: 400;
+    letter-spacing: -3px;
+}
+
+.games-heading h2 span {
+    display: block;
+    color: #A36B50;
+    font-style: italic;
+}
+
+.games-intro {
+    max-width: 350px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #77746E;
+}
+
+/* Grille */
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 35px;
+    row-gap: 70px;
+}
+
+.game-card {
+    min-width: 0;
+}
+
+/* Images */
+
+.game-image-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.game-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: #D5CEC3;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.game-card:hover .game-image img {
+    transform: scale(1.045);
+}
+
+.game-number {
+    position: absolute;
+    top: 20px;
+    left: 22px;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.game-arrow {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #F5F2EC;
+    color: #252522;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-arrow {
+    transform: rotate(45deg);
+}
+
+/* Informations */
+
+.game-info {
+    padding-top: 25px;
+}
+
+.game-title-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.game-title-line h3 {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+}
+
+.game-status {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #A36B50;
+}
+
+.game-description {
+    max-width: 450px;
+    margin-bottom: 22px;
+    color: #77746E;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Informations complémentaires */
+
+.game-meta {
+    display: flex;
+    gap: 20px;
+    padding-top: 17px;
+    border-top: 1px solid rgba(37, 37, 34, 0.2);
+}
+
+.game-meta span {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: #77746E;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+
+.site-footer {
+    background-color: #252522;
+    color: #F5F2EC;
+    padding: 85px 8% 30px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Partie principale */
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.3fr 1fr;
+    gap: 55px;
+    padding-bottom: 75px;
+}
+
+/* Identité du studio */
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #F5F2EC;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+
+.footer-logo span {
+    color: #C18A6C;
+}
+
+.footer-brand p {
+    max-width: 270px;
+    color: #AAA69E;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* Colonnes */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 17px;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+    color: #C18A6C;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.footer-column a,
+.footer-column p {
+    color: #C5C1B9;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #FFFFFF;
+}
+
+.footer-column p {
+    margin: 0;
+}
+
+/* Séparation */
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(245, 242, 236, 0.18);
+}
+
+/* Bas de page */
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-top: 28px;
+}
+
+.footer-bottom p {
+    color: #89867F;
+    font-size: 11px;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-legal a,
+.back-to-top {
+    color: #AAA69E;
+    font-size: 11px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover,
+.back-to-top:hover {
+    color: #FFFFFF;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .games-section {
+        padding: 90px 7%;
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 45px;
+    }
+
+    .games-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+        margin-bottom: 50px;
+    }
+
+    .games-heading h2 {
+        letter-spacing: -1.5px;
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
+
+    .game-title-line h3 {
+        font-size: 21px;
+    }
+
+    .studio-section {
+        padding: 90px 7%;
+    }
+
+    .studio-heading {
+        margin-bottom: 55px;
+    }
+
+    .studio-heading h2 {
+        letter-spacing: -1.5px;
+    }
+
+    .studio-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-bottom: 65px;
+    }
+
+    .studio-lead {
+        font-size: 24px;
+    }
+
+    .studio-values {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-top: 50px;
+    }
+
+    .value-number {
+        margin-bottom: 15px;
+    }
+
+
+    .header-container {
+        width: calc(100% - 40px);
+    }
+
+    .menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 1002;
+    }
+
+    .navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+        padding: 25px 30px 30px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        background: var(--header-bg);
+        border-bottom: 1px solid var(--header-border);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    .navigation.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        padding: 15px 0;
+        border-bottom: 1px solid var(--header-border);
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-contact {
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .site-header {
+        height: 72px;
+    }
+
+    .site-header.scrolled {
+        height: 65px;
+    }
+
+    .logo-symbol {
+        font-size: 32px;
+    }
+
+    .logo-name {
+        font-size: 10px;
+    }
+    .site-footer {
+        padding: 70px 7% 25px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
