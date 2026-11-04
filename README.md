@@ -91,3 +91,4 @@ Le site est conçu pour fonctionner sur les navigateurs modernes :
 ## Licence
 
 Projet indépendant. Les droits sur les contenus, visuels, logos et créations appartiennent à leurs propriétaires respectifs.
+Projet réalisé en groupe de trois dans le cadre d’un TP sur la collaboration avec GitHub.
